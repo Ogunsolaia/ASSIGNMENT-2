@@ -3,8 +3,7 @@ ASSIGNMENT
 
 set.seed(201478668) # setting seed for replicability and debugging
 
-#(1) ASSIGNMENT 1 :Expected sample size estimation for BOP2 design with decision rules parameters (lamda and gamma) and samples sizes (n1, n2)
-# under the null and alternative hypothesis
+#(1) ASSIGNMENT 1 :Expected sample size estimation for BOP2 design with decision rules parameters (lamda and gamma) and samples sizes (n1, n2) under the null and alternative hypothesis
 
 BOP2_design <- function(lambda, gamma, n1, n2, theta) {
   
