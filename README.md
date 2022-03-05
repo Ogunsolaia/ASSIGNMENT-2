@@ -41,6 +41,7 @@ set.seed(201478668) # setting seed for replicability and debugging
        return(mean(Simulated_Samples)) # return the expected sample size
       }
 
+
 #Estimating the sample size under the null hypothesis theta = 0.5
 #lamda = 0.7, gamma = 0.5, n1 = 50, n2 = 100
 
