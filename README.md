@@ -4,12 +4,14 @@ set.seed(201478668) # setting seed for replicability and debugging
 
 #(1) ASSIGNMENT 1 :Expected sample size estimation for BOP2 design with decision rules parameters (lamda and gamma) and samples sizes (n1, n2) under the null and alternative hypothesiS
 
-    
+
      BOP2_design <- function(lambda, gamma, n1, n2, theta) {
      M <- 1000 # Number of samples to be simulated
      Simulated_Samples <- rep(NA, M) # creating and empty vector to store simulated samples
 
      for (i in 1:M) {
+
+
      # Simulate theta from its prior, and then the stage 1 data conditional
      # on this theta.
 
@@ -37,14 +39,15 @@ set.seed(201478668) # setting seed for replicability and debugging
      }
    }
 
-    return(mean(Simulated_Samples)) # return the expected sample size
- }
+
+   return(mean(Simulated_Samples)) # return the expected sample size
+}
 
 #Estimating the sample size under the null hypothesis theta = 0.5
 #lamda = 0.7, gamma = 0.5, n1 = 50, n2 = 100
 
-    BOP2_design(0.7, 0.5, 50, 100, 0.5)
 
+    BOP2_design(0.7, 0.5, 50, 100, 0.5)
 
 #Estimating the sample size under the alternative hypothesis theta = 0.7
 #lamda = 0.7, gamma = 0.5, n1 = 50, n2 = 100
@@ -63,7 +66,7 @@ set.seed(201478668) # setting seed for replicability and debugging
     # theta1 is the parameter value under the null 
     #theta2 is the parameter value under the alternative hypothesis
     # c is the is critical value
-
+   
     y <- rbinom(n = N, size = n1, prob = theta1) # To generate N binomial random numbers for theta1
     x<-rbinom(n=N, size = n1, prob = theta2) #To generate N binomial random numbers for theta2
    
@@ -81,7 +84,7 @@ set.seed(201478668) # setting seed for replicability and debugging
 
 #To compute the type I and tyep II error under the null and alternative hypothesis respectively
 #where theta1 = 0.5, theta2 = 0.7, n1=40, N=10^4, c = 25
-  
+
     TypeI_and_II_Error(10^4, 40, 0.5, 0.7, 25)
 
 
