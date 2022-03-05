@@ -1,4 +1,3 @@
-
 ASSIGNMENT
 
 set.seed(201478668) # setting seed for replicability and debugging
