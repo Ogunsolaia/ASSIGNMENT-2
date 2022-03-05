@@ -36,12 +36,10 @@ set.seed(201478668) # setting seed for replicability and debugging
        Simulated_Samples[i] <- n1
      } else {
        Simulated_Samples[i] <- n2
-     }
-   }
-
-
-   return(mean(Simulated_Samples)) # return the expected sample size
-}
+       }
+       }
+       return(mean(Simulated_Samples)) # return the expected sample size
+      }
 
 #Estimating the sample size under the null hypothesis theta = 0.5
 #lamda = 0.7, gamma = 0.5, n1 = 50, n2 = 100
@@ -80,7 +78,7 @@ set.seed(201478668) # setting seed for replicability and debugging
     #Type I and type II errors are returned as the first and second arguements respectively.
     
     return(c(typeI_error, typeII_error))  
-  }
+    }
 
 #To compute the type I and tyep II error under the null and alternative hypothesis respectively
 #where theta1 = 0.5, theta2 = 0.7, n1=40, N=10^4, c = 25
