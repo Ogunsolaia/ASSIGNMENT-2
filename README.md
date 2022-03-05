@@ -5,8 +5,8 @@ set.seed(201478668) # setting seed for replicability and debugging
 #(1) ASSIGNMENT 1 :Expected sample size estimation for BOP2 design with decision rules parameters (lamda and gamma) and samples sizes (n1, n2) under the null and alternative hypothesiS
 
 
-     BOP2_design <- function(lambda, gamma, n1, n2, theta) {
-     M <- 1000 # Number of samples to be simulated
+     BOP2_design <- function(M, lambda, gamma, n1, n2, theta) {
+     # M is the Number of samples to be simulated
      Simulated_Samples <- rep(NA, M) # creating and empty vector to store simulated samples
 
      for (i in 1:M) {
@@ -32,7 +32,7 @@ set.seed(201478668) # setting seed for replicability and debugging
 
      # The final total sample size is stored in Simulated_Samples
 
-     if (prob_futility < c1) {
+     if (prob_futility >= c1) {
        Simulated_Samples[i] <- n1
      } else {
        Simulated_Samples[i] <- n2
@@ -46,7 +46,7 @@ set.seed(201478668) # setting seed for replicability and debugging
 #lamda = 0.7, gamma = 0.5, n1 = 50, n2 = 100
 
 
-    BOP2_design(0.7, 0.5, 50, 100, 0.5)
+    BOP2_design(10^4, 0.7, 0.5, 50, 100, 0.5)
 
 #Estimating the sample size under the alternative hypothesis theta = 0.7
 #lamda = 0.7, gamma = 0.5, n1 = 50, n2 = 100
