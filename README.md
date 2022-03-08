@@ -32,7 +32,7 @@ set.seed(201478668) # setting seed for replicability and debugging
 
      # The final total sample size is stored in Simulated_Samples
 
-     if (prob_futility >= c1) {
+     if (prob_futility > c1) {
        Simulated_Samples[i] <- n1
      } else {
        Simulated_Samples[i] <- n2
@@ -51,7 +51,7 @@ set.seed(201478668) # setting seed for replicability and debugging
 #Estimating the sample size under the alternative hypothesis theta = 0.7
 #lamda = 0.7, gamma = 0.5, n1 = 50, n2 = 100
 
-    BOP2_design(0.7, 0.5, 50, 100, 0.7)
+    BOP2_design(10^4, 0.7, 0.5, 50, 100, 0.7)
 
 
 ########################################################################
@@ -63,13 +63,12 @@ set.seed(201478668) # setting seed for replicability and debugging
     # N is the number of samples to be simulated
     # n1 is the sample size at the first stage
     # theta1 is the parameter value under the null 
-    #theta2 is the parameter value under the alternative hypothesis
+    # theta2 is the parameter value under the alternative hypothesis
     # c is the is critical value
    
-    y <- rbinom(n = N, size = n1, prob = theta1) # To generate N binomial random numbers for theta1
-    x<-rbinom(n=N, size = n1, prob = theta2) #To generate N binomial random numbers for theta2
+    y <- rbinom(n = N, size = n1, prob = theta1) #To generate N binomial random numbers for theta1
+    x <- rbinom(n = N, size = n1, prob = theta2) #To generate N binomial random numbers for theta2
    
-
     typeI_error <- mean(y >= c) # The type 1 error is stored in type1_error
 
     power <- mean (x>=c) #The power of the test is stored in power
